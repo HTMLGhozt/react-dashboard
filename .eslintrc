@@ -12,11 +12,25 @@
       "jsx": true
     }
   },
+  "overrides": [
+    {
+      "files": [
+        "**/*.test.js"
+      ],
+      "env": {
+        "jest": true
+      }
+    }
+  ],
   "plugins": ["babel", "prettier", "react-hooks"],
   "rules": {
     "import/no-extraneous-dependencies": [
       "error", {
-        "devDependencies": [ "**/webpack.*.js" ],
+        "devDependencies": [
+          "**/webpack.*.js",
+          "**/__tests__/*.test.js",
+          "**/*.config.js"
+        ],
         "optionalDependencies": false
       }
     ],
