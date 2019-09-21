@@ -1,7 +1,7 @@
 {
-  "name": "react-cms",
+  "name": "react-dashboard",
   "version": "1.0.0",
-  "description": "A React.js content management system",
+  "description": "A React.js dashboard",
   "main": "src/index.js",
   "scripts": {
     "test": "jest --config ./config/jest.config.js",
