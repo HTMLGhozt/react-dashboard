@@ -11,6 +11,7 @@ yarn.lock
 # Build directory
 .DS_Store
 .build
+dist/
 
 # Swap
 [._]*.s[a-v][a-z]
