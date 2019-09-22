@@ -1,6 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const babelOptions = require('../.babelrc.json');
+const babelOptions = require('../babel.config.js');
 
 const ROOT_DIR = path.resolve(__dirname, '../');
 
