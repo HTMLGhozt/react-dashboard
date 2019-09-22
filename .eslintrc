@@ -48,6 +48,7 @@
     "react-hooks/rules-of-hooks": 2,
     "react/jsx-filename-extension": 0,
     "react/jsx-one-expression-per-line": 0,
+    "react/state-in-constructor": [1, "never"],
     "react/prefer-stateless-function": [2, {
       "ignorePureComponents": true
     }],
