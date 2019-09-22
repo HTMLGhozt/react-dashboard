@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const babelOptions = require('../babel.config.js');
 
 const ROOT_DIR = path.resolve(__dirname, '../');
 
@@ -29,10 +30,7 @@ module.exports = {
         use: [
           {
             loader: 'babel-loader?presets[]=react',
-            query: {
-              cacheDirectory: true,
-              presets: ['@babel/preset-env', '@babel/react'],
-            },
+            options: babelOptions,
           },
         ],
         exclude: /node_modules/,

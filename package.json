@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "test": "cross-env BABEL_ENV=test jest --config ./config/jest.config.js",
-    "start": "webpack-dev-server --config ./config/webpack.development.js --open",
+    "start": "webpack-dev-server --hot --config ./config/webpack.development.js --open",
     "lint": "eslint ./",
     "prettier": "prettier --config ./.prettierrc --ignore-path ./.prettierignore \"*.+(js|jsonc?|yml|yaml|css|less|md|graphql|mdx)\""
   },
@@ -22,6 +22,7 @@
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-transform-runtime": "^7.6.0",
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
     "@babel/register": "^7.5.5",
@@ -32,7 +33,6 @@
     "babel-eslint": "^10.0.3",
     "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
-    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
     "clean-webpack-plugin": "^3.0.0",
     "eslint": "^6.4.0",
     "eslint-config-airbnb": "^18.0.1",
