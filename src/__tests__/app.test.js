@@ -1,6 +1,6 @@
 import React from 'react';
 // Jest doesn't run through Webpack so It doesn't resolve modules
-import ReactDOM from '@hot-loader/react-dom';
+import ReactDOM from 'react-dom';
 import App from '../App';
 
 describe('App', () => {
