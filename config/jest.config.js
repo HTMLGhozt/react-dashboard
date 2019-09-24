@@ -6,4 +6,7 @@ module.exports = {
   rootDir: ROOT_DIR,
   moduleFileExtensions: ['js', 'json'],
   testPathIgnorePatterns: ['/node_modules/', '/cypress/', '/dist/'],
+  moduleNameMapper: {
+    '^react-dom$': '@hot-loader/react-dom',
+  },
 };

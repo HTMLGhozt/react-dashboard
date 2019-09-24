@@ -1,0 +1,7 @@
+{
+  "watch": ["server/"],
+  "ignore": ["*.test.js", "__tests__/**/*.js"],
+  "env": {
+    "NODE_ENV": "development"
+  }
+}
