@@ -7,10 +7,13 @@
     "test": "jest --config ./config/jest.config.js",
     "pretest:e2e": "npm run build",
     "cy:run": "cypress run",
-    "test:e2e": "start-server-and-test start http://localhost:3000 cy:run",
-    "start:dev": "webpack-dev-server --config ./config/webpack.development.js --open",
-    "start": "serve --no-clipboard --single --listen 3000 dist",
-    "build": "webpack --config ./config/webpack.production.js",
+    "cy:start": "cypress open",
+    "test:e2e": "cross-env NODE_ENV=test server-test server:test http-get://localhost:3000 cy:run",
+    "start:dev": "cross-env NODE_ENV=development webpack-dev-server --config ./config/webpack.development.js --open",
+    "start": "cross_env NODE_ENV=production node ./server/server.js",
+    "server:test": "node ./server/server.js",
+    "server:dev": "nodemon ./server/server.js --config config/nodemon.json",
+    "build": "cross-env NODE_ENV=production webpack --config ./config/webpack.production.js",
     "lint": "eslint ./",
     "prettier": "prettier --config ./.prettierrc --ignore-path ./.prettierignore \"*.+(js|jsonc?|yml|yaml|css|less|md|graphql|mdx)\""
   },
@@ -24,8 +27,10 @@
   "license": "MIT",
   "dependencies": {
     "@hot-loader/react-dom": "^16.9.0",
-    "react-hot-loader": "^4.12.13",
-    "react": "^16.9.0"
+    "fastify": "^2.8.0",
+    "fastify-static": "^2.5.0",
+    "react": "^16.9.0",
+    "react-hot-loader": "^4.12.13"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
@@ -39,6 +44,7 @@
     "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
     "clean-webpack-plugin": "^3.0.0",
+    "cross-env": "^6.0.0",
     "cypress": "^3.4.1",
     "eslint": "^6.4.0",
     "eslint-config-airbnb": "^18.0.1",
@@ -55,6 +61,7 @@
     "husky": "^3.0.5",
     "jest": "^24.9.0",
     "lint-staged": "^9.2.5",
+    "nodemon": "^1.19.2",
     "prettier": "^1.18.2",
     "serve": "^11.1.0",
     "start-server-and-test": "^1.10.2",
